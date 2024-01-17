@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <h1>Liste des Articles</h1>
+    <ul>
+        {% for article in donnees %}
+            <li>
+                <img src="{{ asset('/uploads/images/' ~ article.image) }}" alt="{{ article.name }}" style="height: 100px;"  />
+                <a href="{{ path('article_show', {'id': article.id}) }}">{{ article.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

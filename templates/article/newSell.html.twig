@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sell{% endblock %}
+
+{% block body %}
+    <h1>Sell</h1>
+
+    {{ form_errors(articleForm) }}
+
+    {{ form_start(articleForm) }}
+        {{ form_row(articleForm.name) }}
+        {{ form_row(articleForm.description) }}
+        {{ form_row(articleForm.price) }}
+        {{ form_row(articleForm.image) }}
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(articleForm) }}
+{% endblock %}
